@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product_list</title>
+</head>
+<body>
+    <h1>
+        products lists
+    </h1>
+    {% for i in students %}
+    <li>
+        <ol>
+            name-{{i.name}}
+        </ol>
+        <br>
+        <ol>
+            email-{{i.email}}
+        </ol>
+    </li>
+    {% endfor %}
+</body>
+</html>
