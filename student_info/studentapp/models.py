@@ -8,4 +8,4 @@ class Student(models.Model):
     phno=models.CharField(max_length=10)
     college=models.CharField(max_length=20,null=True)
     def __str__(self):
-        return self.name
+        return self.email
