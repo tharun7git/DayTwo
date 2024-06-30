@@ -22,7 +22,7 @@
 
         .table-container {
             margin: auto;
-            width: 90%; /* Increased width */
+            width: 90%;
             border-collapse: collapse;
             overflow: hidden;
             box-shadow: 0 0 20px rgba(0,0,0,0.1);
@@ -33,11 +33,11 @@
             border-collapse: collapse;
             background-color: #444;
             color: #f4f4f4;
-            font-size: 1.2em; /* Increased font size */
+            font-size: 1.2em;
         }
 
         th, td {
-            padding: 15px; /* Increased padding */
+            padding: 15px;
             text-align: left;
             border-bottom: 1px solid #555;
         }
@@ -66,17 +66,22 @@
         <table class="table table-striped">
             <thead>
                 <tr>
+                    <th scope="col">#</th>
                     <th scope="col">Book_Name</th>
                     <th scope="col">Author</th>
-                    <th scope="col">rack_number</th>
+                    <th scope="col">Rack Number</th>
+                    <th scope="col">Actions</th>
                 </tr>
             </thead>
             <tbody>
                 {% for i in books %}
                 <tr>
-                    <td>{{i.Bookname}}</td>
-                    <td>{{i.Author}}</td>
-                    <td>{{i.Rack}}</td>
+                    <td>{{ i.pk }}</td>
+                    <td>{{ i.Bookname }}</td>
+                    <td>{{ i.Author }}</td>
+                    <td>{{ i.Rack }}</td>
+                    <td><a href="{% url 'deletebook' i .pk %}" class="btn btn-danger" >Delete</a></td>
+                    <td><a href="{% url 'editbook' i.pk %}" class="btn btn-danger">Edit</a></td>
                 </tr>
                 {% endfor %}
             </tbody>
